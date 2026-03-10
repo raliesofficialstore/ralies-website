@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "**/*",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/backend/(.*)",
+      "headers": {
+        "Access-Control-Allow-Origin": "*"
+      }
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ],
+  "env": {
+    "VITE_SUPABASE_URL": "https://kdiaztrsgvejzsextyto.supabase.co",
+    "VITE_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtkaWF6dHJzZ3ZlanpzZXh0eXRvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMwOTEyNDIsImV4cCI6MjA4ODY2NzI0Mn0.xSJKsjezF4MT49b4Wcb-Kr2Z20BIvVUD4p3MTdm-x1E"
+  }
+}
